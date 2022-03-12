@@ -15,7 +15,7 @@ function Login() {
           src="https://cdn2.downdetector.com/static/uploads/logo/IMessage_Icon.png"
           alt=""
         />
-        <h1>iMessage</h1>
+        <h1>ELM327 ODB2</h1>
       </div>
 
       <Button onClick={signIn}>Sign In</Button>

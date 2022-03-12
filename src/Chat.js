@@ -54,9 +54,8 @@ function Chat() {
     <div className="chat">
       <div className="chat__header">
         <h4>
-          To: <span className="chat__name">{chatName}</span>
+          <span className="chat__name">{chatName}</span>
         </h4>
-        <strong>Details</strong>
       </div>
 
       <div className="chat__messages">
@@ -72,14 +71,11 @@ function Chat() {
           <input
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="iMessage"
+            placeholder="Message"
             type="text"
           />
           <button onClick={sendMessage}>Send Message</button>
         </form>
-        <IconButton>
-          <MicNoneIcon />
-        </IconButton>
       </div>
     </div>
   );
