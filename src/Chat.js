@@ -10,6 +10,9 @@ import Message from "./Message";
 import { selectUser } from "./features/userSlice";
 import FlipMove from "react-flip-move";
 
+var serialPort = null;
+var serialPortWriter = null;
+
 function Chat() {
   const user = useSelector(selectUser);
   const [input, setInput] = useState("");
@@ -34,7 +37,54 @@ function Chat() {
     }
   }, [chatId]);
 
-  const sendMessage = (e) => {
+  const connectToSerial = async () => {
+    try {
+      serialPort = await navigator.serial.requestPort();
+      await serialPort.open({ baudRate: 38400 });
+
+      // eslint-disable-next-line no-undef
+      const textEncoder = new TextEncoderStream();
+      const writableStreamClosed = textEncoder.readable.pipeTo(
+        serialPort.writable
+      );
+
+      serialPortWriter = textEncoder.writable.getWriter();
+
+      // eslint-disable-next-line no-undef
+      const decoder = new TextDecoderStream();
+
+      serialPort.readable.pipeTo(decoder.writable);
+      const inputStream = decoder.readable;
+      const reader = inputStream.getReader();
+
+      while (true) {
+        const { value, done } = await reader.read();
+        if (value) {
+          console.log(value);
+          db.collection("chats").doc(chatId).collection("messages").add({
+            timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+            message: value,
+            uid: user.uid,
+            photo: null,
+            email: "elm327",
+            displayName: "elm327",
+          });
+    
+          //        log.textContent += value + '\n';
+        }
+        if (done) {
+          console.log("[readLoop] DONE", done);
+          reader.releaseLock();
+          break;
+        }
+      }
+    } catch (error) {
+      console.log(error);
+      //    log.innerHTML = error;
+    }
+  };
+
+  const sendMessage = async (e) => {
     e.preventDefault();
 
     if (input) {
@@ -46,6 +96,8 @@ function Chat() {
         email: user.email,
         displayName: user.displayName,
       });
+
+      await serialPortWriter.write(`${input}\r\n`);
     }
     setInput("");
   };
@@ -56,6 +108,10 @@ function Chat() {
         <h4>
           <span className="chat__name">{chatName}</span>
         </h4>
+      </div>
+
+      <div className="chat__serialconnect">
+        <button onClick={connectToSerial}>Connect to Serial Port</button>
       </div>
 
       <div className="chat__messages">
