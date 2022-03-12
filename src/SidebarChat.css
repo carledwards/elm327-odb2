@@ -1,28 +1,28 @@
 .sidebarChat {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    border-bottom: 1px solid lightgray;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid lightgray;
+  cursor: pointer;
 }
 
 .sidebarChat:hover {
-    background-color: #3e9efd;
-    color: white;
+  background-color: #3e9efd;
+  color: white;
 }
 
 .sidebarChat__info {
-    margin-left: 15px;
-    position: relative;
-    width: 100%;
+  margin-left: 15px;
+  position: relative;
+  width: 100%;
 }
 
 .sidebarChat__info > small {
-    position: absolute;
-    top: 5px;
-    right: 0;
+  position: absolute;
+  top: 5px;
+  right: 0;
 }
 
 .sidebarChat__avatar {
-    margin: 10px;
+  margin: 10px;
 }

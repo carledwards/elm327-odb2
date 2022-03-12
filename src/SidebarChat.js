@@ -37,9 +37,12 @@ function SdidebarChat({ id, chatName }) {
         <p>{chatInfo[0]?.message}</p>
 
         {/* timestamps will initally come in being null
-             see: https://medium.com/firebase-developers/the-secrets-of-firestore-fieldvalue-servertimestamp-revealed-29dd7a38a82b#:~:text=Server%20timestamps%20are%20a%20valuable,code%20and%20in%20security%20rules. */
-            }
-        <small>{chatInfo[0]?.timestamp ? new Date(chatInfo[0].timestamp.seconds * 1000).toLocaleString() : ''}</small>
+             see: https://medium.com/firebase-developers/the-secrets-of-firestore-fieldvalue-servertimestamp-revealed-29dd7a38a82b#:~:text=Server%20timestamps%20are%20a%20valuable,code%20and%20in%20security%20rules. */}
+        <small>
+          {chatInfo[0]?.timestamp
+            ? new Date(chatInfo[0].timestamp.seconds * 1000).toLocaleString()
+            : ""}
+        </small>
       </div>
     </div>
   );
