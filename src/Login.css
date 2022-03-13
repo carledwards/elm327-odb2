@@ -7,11 +7,11 @@
 
 .login > div > img {
   object-fit: contain;
-  height: 150px;
+  height: 10rem;
 }
 
 .login > button {
-  width: 300px;
+  width: 20rem;
   background-color: #3ea4fb;
   color: #eff2f5;
   font-weight: 800;

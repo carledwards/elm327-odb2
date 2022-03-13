@@ -1,8 +1,8 @@
 .sidebarChat {
   display: flex;
   align-items: center;
-  padding: 10px;
-  border-bottom: 1px solid lightgray;
+  padding: .6rem;
+  border-bottom: .06rem solid lightgray;
   cursor: pointer;
 }
 
@@ -12,14 +12,14 @@
 }
 
 .sidebarChat__info {
-  margin-left: 15px;
-  margin-right: 15px;
+  margin-left: 1rem;
+  margin-right: 1rem;
   position: relative;
   width: 100%;
 }
 
 .sidebarChat__info > small {
   position: absolute;
-  top: 5px;
+  top: .3rem;
   right: 0;
 }

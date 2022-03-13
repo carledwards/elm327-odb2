@@ -4,15 +4,15 @@
   position: relative;
   width: fit-content;
   justify-content: space-between;
-  margin: 10px 10px 1px 1px;
+  margin: .6rem .6rem .06rem .06rem;
 }
 
 .message > p {
   background-color: #f3f3f5;
   font-size: medium;
-  padding: 5px 15px;
-  border-radius: 20px;
-  margin: 10px;
+  padding: .3rem 1rem;
+  border-radius: 1.25rem;
+  margin: .3rem;
   margin-right: auto;
 }
 
@@ -22,7 +22,7 @@
 
 .message__timestamp > small {
   color: gray;
-  font-size: 8px;
+  font-size: .5rem;
   width: 100%;
   text-align: center;
 }

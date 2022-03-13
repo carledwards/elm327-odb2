@@ -4,14 +4,14 @@
   flex: 0.65;
   height: 100vh;
   background-color: white;
-  border-left: 1px solid lightgray;
+  border-left: .06rem solid lightgray;
 }
 
 .chat__header {
   display: flex;
   justify-content: space-between;
-  padding: 20px;
-  border-bottom: 1px solid lightgray;
+  padding: 1.25rem;
+  border-bottom: .06rem solid lightgray;
   background-color: #f5f5f5;
 }
 
@@ -27,8 +27,8 @@
 .chat__input {
   display: flex;
   align-items: center;
-  padding: 10px 20px;
-  border-top: 1px solid lightgray;
+  padding: 0.6rem .125rem;
+  border-top: .06rem solid lightgray;
   background-color: #f5f5f5;
 }
 
@@ -39,9 +39,9 @@
 .chat__input > form > input {
   width: 98%;
   outline-width: 0;
-  border: 1px solid lightgray;
-  border-radius: 999px;
-  padding: 5px;
+  border: .06rem solid lightgray;
+  border-radius: 60rem;
+  padding: .3rem;
 }
 
 .chat__input > form > button {
