@@ -1,4 +1,3 @@
-import { Avatar } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { setChat } from "./features/chatSlice";
@@ -31,7 +30,6 @@ function SdidebarChat({ id, chatName }) {
       }}
       className="sidebarChat"
     >
-      <Avatar className="sidebarChat__avatar" />
       <div className="sidebarChat__info">
         <h3>{chatName}</h3>
         <p>{chatInfo[0]?.message}</p>

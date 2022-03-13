@@ -1,5 +1,3 @@
-import { IconButton } from "@material-ui/core";
-import MicNoneIcon from "@material-ui/icons/MicNone";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import "./Chat.css";
@@ -66,11 +64,9 @@ function Chat() {
             message: value,
             uid: user.uid,
             photo: null,
-            email: "elm327",
+            email: "elm327@localhost.com",
             displayName: "elm327",
           });
-    
-          //        log.textContent += value + '\n';
         }
         if (done) {
           console.log("[readLoop] DONE", done);
@@ -80,7 +76,6 @@ function Chat() {
       }
     } catch (error) {
       console.log(error);
-      //    log.innerHTML = error;
     }
   };
 

@@ -13,6 +13,7 @@
 
 .sidebarChat__info {
   margin-left: 15px;
+  margin-right: 15px;
   position: relative;
   width: 100%;
 }
@@ -21,8 +22,4 @@
   position: absolute;
   top: 5px;
   right: 0;
-}
-
-.sidebarChat__avatar {
-  margin: 10px;
 }
